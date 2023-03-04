@@ -1,0 +1,11 @@
+{
+  "name": "addictionfree",
+  "version": "1.0.0",
+  "description": "A portal for drug abuse treatment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dev R",
+  "license": "ISC"
+}
