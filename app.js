@@ -48,6 +48,16 @@ const Dashboard = require("./routes/Dashboard");
 app.use("/dashborad", Dashboard);
 
 
+// *************** Admin Dashboard  ***************
+
+const admin = require("./routes/Admin");
+app.use("/admin", admin);
+
+// *************** Doctor Dashboard  ***************
+
+const doctor = require("./routes/Doctor");
+app.use("/doctor", doctor);
+
 // ***************  APP LISTEN ***************
 
 app.listen(PORT, () => {

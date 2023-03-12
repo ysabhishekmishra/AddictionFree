@@ -1,141 +1,176 @@
 <!Doctype HTML>
-	<html>
-	<head>
-		<title></title>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/dashboard.css" />
-        <link rel="icon" type="image/x-icon" href="Ass\favicon.png">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="https://kit.fontawesome.com/bb8ca7a51b.js" crossorigin="anonymous"></script>
-	</head>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/dashboard.css" />
+	<link rel="icon" type="image/x-icon" href="Ass\favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/bb8ca7a51b.js" crossorigin="anonymous"></script>
+</head>
 
 
-	<body>
-		
-		
+<body>
+
+
 	<div id="mySidenav" class="sidenav">
-	<p class="logo"><span>United</span>-Hospital</p>
-	  <a href="/profile" class="icon-a"><i class="fa fa-user icons"></i> Dashboard</a>
-	  <a href="#"class="icon-a"><i class="fa-solid fa-calendar-check"></i>  Appointment</a>
-	  <a href="#"class="icon-a"><i class="fa fa-exchange icons"></i>   TaskBoard</a>
-	  <a href="#"class="icon-a"><i class="fa fa-bed-pulse icons"></i>  Patient</a>
-      <a href="#"class="icon-a"><i class="fa fa-bed-pulse icons"></i>  Report</a>
-	  <a href="/logout"class="icon-a"><i class="fa fa-sign-out icons"></i>  Logout</a>
+		<p class="logo"><span>United</span>-Hospital</p>
+		<a href="/profile" class="icon-a"><i class="fa fa-user icons"></i> Dashboard</a>
+		<a href="#" class="icon-a"><i class="fa-solid fa-calendar-check"></i> Appointment</a>
+		<a href="#" class="icon-a"><i class="fa fa-exchange icons"></i> TaskBoard</a>
+		<a href="#" class="icon-a"><i class="fa fa-bed-pulse icons"></i> Patient</a>
+		<a href="#" class="icon-a"><i class="fa fa-bed-pulse icons"></i> Report</a>
+		<a href="/logout" class="icon-a"><i class="fa fa-sign-out icons"></i> Logout</a>
 
 	</div>
 	<div id="main">
 
 		<div class="head">
-		<div class="col-div-6">
-	<span style="font-size:30px;cursor:pointer; color: #82a8e6;" class="nav"  >☰ </span>
-	<span style="font-size:30px;cursor:pointer; color: black;" class="nav2"  >☰ Dashboard</span>
-		</div>
-		
-		<div class="col-div-6">
-		<div class="profile">
+			<div class="col-div-6">
+				<span style="font-size:30px;cursor:pointer; color: #82a8e6;" class="nav">☰ </span>
+				<span style="font-size:30px;cursor:pointer; color: black;" class="nav2">☰ Dashboard</span>
+			</div>
 
-			<img src="static\users.png" class="pro-img" />
-			<p>Abhishek<span>Account No:-123</span></p>
+			<div class="col-div-6">
+				<div class="profile">
+
+					<img src="static\users.png" class="pro-img" />
+					<p id="nam"><span>Account No:-123</span></p>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
 		</div>
-	</div>
-	
-		<div class="clearfix"></div>
-	</div>
 
 		<div class="clearfix"></div>
-		<br/>
-		
+		<br />
+
 		<div class="col-div-3">
 			<div class="box">
-				<p>50000<br/><span>Account Balance</span></p>
-				<i class="fa fa-inr box-icon"></i>
+				<p>50000<br /><span>Patient Number</span></p>
+				<i class="fa fa-hospital-user box-icon"></i>
 			</div>
 		</div>
 		<div class="col-div-3">
 			<div class="box">
-				<p>4.33%<br/><span>Interest</span></p>
-				
+				<p>4.33%<br /><span>Interest</span></p>
+
 				<i class="fa fa-percent box-icon"></i>
 			</div>
 		</div>
 		<div class="col-div-3">
 			<div class="box">
-				<a href="/deposit"><p>Deposit<br/><span></span></p></a>
+				<a href="/deposit">
+					<p>Deposit<br /><span></span></p>
+				</a>
 				<i class="fa fa-shopping-bag box-icon"></i>
 			</div>
 		</div>
 		<div class="col-div-3">
 			<div class="box">
-				<a href="/withdrawl"><p>Withdrawl<br/><span></span></p></a>
+				<a href="/withdrawl">
+					<p>Withdrawl<br /><span></span></p>
+				</a>
 				<i class="fa fa-tasks box-icon"></i>
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<br/><br/>
+		<br /><br />
 		<div class="col-div-8">
 			<div class="box-8">
-			<div class="content-box">
-				<heading>Total turnover of 50000  </heading>
-				<br/>
-				<iframe width="750" height="250" frameborder="0" scrolling="no" src="//plotly.com/~hrishi332/9.embed"></iframe>
+				<div class="content-box">
+					<heading>Total turnover of 50000 </heading>
+					<br />
+					<iframe width="750" height="250" frameborder="0" scrolling="no"
+						src="//plotly.com/~hrishi332/9.embed"></iframe>
+				</div>
 			</div>
-		</div>
 		</div>
 
 		<div class="col-div-4">
 			<div class="box-4">
-			<div class="content-box">
-				<heading>Account Statistic</heading>
+				<div class="content-box">
+					<heading>Account Statistic</heading>
 
-				<div class="circle-wrap">
-	    <div class="circle">
-	      <div class="mask full">
-	        <div class="fill"></div>
-	      </div>
-	      <div class="mask half">
-	        <div class="fill"></div>
-	      </div>
-	      <div class="inside-circle"> 75% </div>
-	    </div>
-	  </div>
+					<div class="circle-wrap">
+						<div class="circle">
+							<div class="mask full">
+								<div class="fill"></div>
+							</div>
+							<div class="mask half">
+								<div class="fill"></div>
+							</div>
+							<div class="inside-circle"> 75% </div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
-			        
+
 		<div class="clearfix"></div>
 	</div>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		var brachData = new Object()
+		const url = "http://localhost:8100/login";
+		fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				brachData = data;
+				getData();
+			})
+			
+
+		function getData() {
+			console.log(branchData);
+		}
+	</script>
+
+
+
+
+
+
+
+
+
 	<script>
 
-	  $(".nav").click(function(){
-	    $("#mySidenav").css('width','70px');
-	    $("#main").css('margin-left','70px');
-	    $(".logo").css('visibility', 'hidden');
-	    $(".logo span").css('visibility', 'visible');
-	     $(".logo span").css('margin-left', '-10px');
-	     $(".icon-a").css('visibility', 'hidden');
-	     $(".icons").css('visibility', 'visible');
-	     $(".icons").css('margin-left', '-8px');
-	      $(".nav").css('display','none');
-	      $(".nav2").css('display','block');
-	  });
 
-	$(".nav2").click(function(){
-	    $("#mySidenav").css('width','300px');
-	    $("#main").css('margin-left','300px');
-	    $(".logo").css('visibility', 'visible');
-	     $(".icon-a").css('visibility', 'visible');
-	     $(".icons").css('visibility', 'visible');
-	     $(".nav").css('display','block');
-	      $(".nav2").css('display','none');
-	 }); 
+		$(".nav").click(function () {
+			$("#mySidenav").css('width', '70px');
+			$("#main").css('margin-left', '70px');
+			$(".logo").css('visibility', 'hidden');
+			$(".logo span").css('visibility', 'visible');
+			$(".logo span").css('margin-left', '-10px');
+			$(".icon-a").css('visibility', 'hidden');
+			$(".icons").css('visibility', 'visible');
+			$(".icons").css('margin-left', '-8px');
+			$(".nav").css('display', 'none');
+			$(".nav2").css('display', 'block');
+		});
+
+		$(".nav2").click(function () {
+			$("#mySidenav").css('width', '300px');
+			$("#main").css('margin-left', '300px');
+			$(".logo").css('visibility', 'visible');
+			$(".icon-a").css('visibility', 'visible');
+			$(".icons").css('visibility', 'visible');
+			$(".nav").css('display', 'block');
+			$(".nav2").css('display', 'none');
+		});
 
 	</script>
 
-	</body>
+</body>
 
 
-	</html>
+</html>

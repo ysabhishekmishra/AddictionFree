@@ -13,11 +13,20 @@ router.post("/", async function(req, res){
   try {
       // check if the user exists
       const user = await UserModel.findOne({ username: req.body.username });
+      // const userdata = await UserModel.find({ username: req.body.username },role);
+      
       if (user) {
-        //check if password matches
         const result = req.body.password === user.password;
         if (result) {
-          res.sendFile(path.join(__dirname, "../pages/dashboard.html"));
+          if(user.role==="Admin"){
+            res.sendFile(path.join(__dirname, "../pages/admin.html"));
+          }
+          else if(user.role==="Doctor"){
+            res.sendFile(path.join(__dirname, "../pages/doctor.html"));
+          }
+          else{
+            res.sendFile(path.join(__dirname, "../pages/dashboard.html"));
+          }
         } else {
           res.status(400).json({ error: "password doesn't match" });
         }
