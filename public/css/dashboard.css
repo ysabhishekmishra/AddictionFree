@@ -41,11 +41,11 @@ body{
   display: block;
   transition: 0.3s;
 }
-.sidenav a:hover {
+/* .sidenav a:hover {
   
   color: #d2e1fa;
   background-color:black;
-}
+} */
 .sidenav{
   position: absolute;
   top: 0;
@@ -89,16 +89,19 @@ body{
     color: #8e8b8b;
 }
 .col-div-3{
-	width: 25%;
+	width: 33%;
   height:40%;
 	float: left;
 }
 .box{
-	width: 85%;
-	height: 200px;
+	width: 80%;
+	height: 150px;
 	background-color: #ff5c7e;
 	margin-left: 10px;
 	padding:10px;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .box p{
 	 font-size: 35px;
@@ -223,4 +226,13 @@ td, th {
 }
 heading{
   color:black;
+}
+.appointmentform{
+  display:none;
+  height:inherit;
+  margin-left:20%;
+  width:50%;
+}
+.mera{
+  display:none;
 }
