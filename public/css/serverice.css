@@ -1,11 +1,15 @@
 @import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
-.service{
+.service , .service1{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #E6E6ED;
     
+}
+.service{
+  flex-direction: column;
+  padding-top:2%;
 }
 .service-13 {
   font-family: "Montserrat", sans-serif;
@@ -29,23 +33,6 @@
 	text-decoration: none;
 }
 
-.service-13 .btn-success-gradiant {
-		background: #2cdd9b;
-    background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
-    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
-}
-
-.service-13 .btn-success-gradiant:hover {
-		background: #1dc8cc;
-    background: -webkit-linear-gradient(legacy-direction(to right), #1dc8cc 0%, #2cdd9b 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#1dc8cc), to(#2cdd9b));
-    background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-    background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-    background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);	
-}
 
 .service-13 .linking {
 	color: #3e4555;

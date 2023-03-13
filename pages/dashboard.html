@@ -1,0 +1,282 @@
+<!Doctype HTML>
+<html>
+
+<head>
+	<title>Patient-Dashboard</title>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/css/dashboard.css" />
+	<link rel="icon" type="image/x-icon" href="Ass\favicon.png">
+	<script src="https://kit.fontawesome.com/bb8ca7a51b.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+
+	<div id="mySidenav" class="sidenav">
+		<p class="logo"><span>United</span>-Hospital</p>
+		<button class="btn" style="background-color:inherit;border:none;" onclick="profile()"><a href="#" class="icon-a"><i class="fa fa-user icons"></i> Profile</a></button><br>
+		<button class="btn" style="background-color:inherit;border:none;" onclick="gayeb()"><a href="#" class="icon-a"><i class="fa fa-stethoscope icons"></i>Doctor</a></button><br>
+		<button class="btn" style="background-color:inherit;border:none;" onclick="profile()"><a href="#" class="icon-a"><i class="fa fa-bed-pulse icons"></i> Patient</a></button><br>
+		<button class="btn" style="background-color:inherit;border:none;" onclick="profile()"><a href="#" class="icon-a"><i class="fa fa-pills icons"></i> Drug </a></button><br>
+		<button class="btn" style="background-color:inherit;border:none;"><a href="/login" class="icon-a"><i class="fa fa-sign-out icons"></i> Logout</a></button><br>
+
+	</div>
+	<div id="main">
+
+		<div class="head">
+			<div class="col-div-6">
+				<span style="font-size:30px;cursor:pointer; color: #82a8e6;" class="nav">☰ </span>
+				<span style="font-size:30px;cursor:pointer; color: black;" class="nav2">☰ </span>
+			</div>
+
+			<div class="col-div-6">
+				<div class="profile">
+
+					<!-- <img src="static\users.png" class="pro-img" /> -->
+					<p id="nam"><span>Account No:-123</span></p>
+				</div>
+			</div>
+		</div>
+<div class="look" id="look">
+		<div class="clearfix"><h1>Patient Dashboard</h1></div>
+		<br />
+
+		<div class="col-div-3">
+			<div class="box">
+				<p>50000<br /><span>Patient Number</span></p>
+				<i class="fa fa-hospital-user box-icon"></i>
+			</div>
+		</div>
+		<div class="col-div-3">
+			<div class="box">
+				<p>Active<br /><span>Status</span></p>
+				<i class="fa fa-bed-pulse box-icon"></i>
+			</div>
+		</div>
+		<div class="col-div-3">
+			<div class="box" style="display: flex;flex-direction: row;">
+				<button style="background: inherit;border:none" onclick="gayeb()">
+					<p>Appointment<br /><span>Book your Appointment</span></p>
+				</button>
+				<i class="fa fa-file-medical box-icon"></i>
+			</div>
+		</div>
+		
+		<div class="clearfix"></div>
+		<br /><br />
+		<div class="col-div-8">
+			<div class="box-8">
+				<div class="content-box">
+					<heading>Total turnover of 50000 </heading>
+					<br />
+					<iframe width="750" height="250" frameborder="0" scrolling="no"
+						src="//plotly.com/~hrishi332/9.embed"></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-div-4">
+			<div class="box-4">
+				<div class="content-box">
+					<heading>Account Statistic</heading>
+
+					<div class="circle-wrap">
+						<div class="circle">
+							<div class="mask full">
+								<div class="fill"></div>
+							</div>
+							<div class="mask half">
+								<div class="fill"></div>
+							</div>
+							<div class="inside-circle"> 75% </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="appointmentform" id="show">
+		<h2><br>Book your Appointment</h2>
+		<form" method="POST">
+			<!-- Name input -->
+			<div class="form-outline mb-2">
+				<label class="form-label " for="name">Patient Name</label>
+				<input type="text" id="name" name="name" placeholder="Enter your name"
+					class="form-control form-control" />
+				
+			</div>
+			<!-- Age input -->
+			<div class="form-outline mb-2">
+				<label class="form-label" for="age">Patient Age</label>
+				<input type="age" id="age" name="age" placeholder="Enter your Age"
+					class="form-control form-control" />
+			</div>
+			<!-- Gender input -->
+			<div class="form-outline mb-2">
+				<label class="form-label" for="gender">Select Gender</label><br>
+				<select id="dropdown" name="gender" class="form-control" required>
+					<option disabled selected value>Select</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Others">Others</option>
+				</select>
+			</div>
+			<!-- Email input -->
+			<div class="form-outline mb-2">
+				<label class="form-label" id="user-label" for="email">Email<small>(Required*)</small></label>
+				<input type="Email" placeholder="Email"name="email"  id="form1Example13" class="form-control form-control" />
+			</div>
+
+			<!-- Appointment time -->
+			<div class="form-outline mb-2">
+				<label class="form-label" id="user-label" for="username">Appointment Date</label>
+				<input type="date" placeholder="Enter date" name="date" id="form1Example13" class="form-control form-control" />
+			</div>
+
+			<!-- AppointMent Time input -->
+			<div class="form-outline mb-2">
+				<label class="form-label" for="password">Appointment-Time</label>
+				<input type="time" id="form1Example23" name="time" class="form-control form-control" />
+			</div>
+			<div class="form-outline mb-2">
+				<label class="form-label" for="password">Describe your Helth Condition</label>
+				<textarea type="textarea" id="form1Example23" name="time" class="form-control form-control"></textarea>
+			</div>
+
+			<!-- Submit button -->
+			<button type="submit" class="btn btn-success btn-lg btn-block my-1">Submit</button>
+			<button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5" onclick="back()">back</button>
+
+		</form>
+	</div>
+
+</div>
+
+
+	<div class="mera" id="profile">
+		<div class="container p-5">
+			<div class="card mb-5" style="border:none;">
+			  <div class="row" style="border:none;">
+				<div class="col-md-4 p-5" >
+				  <img src="Ass/profile.jpg" height="300"  width="300" alt="..." class="center">
+				</div>
+				<div class="col-md-8">
+				  <div class="card-body" >
+					<h5 class="card-title"><b>Patient Information</b></h5>
+					
+					  <form method="post">
+						<!-- Patient Id  -->
+						<div class="form-outline mb-2">
+							<label class="form-label" id="user-label" for="email">Patient ID</label>
+							<input type="text" placeholder="Email"name="email"  id="form1Example13" class="form-control form-control" readonly/>
+						</div>
+
+						<!-- Name input -->
+						<div class="form-outline mb-2">
+							<label class="form-label" id="user-label" for="email">Name Of Patient</label>
+							<input type="text" placeholder="Email"name="email"  id="form1Example13" class="form-control form-control" readonly/>
+						</div>
+			
+						<!-- Patient Gender -->
+						<div class="form-outline mb-2">
+							<label class="form-label" for="password">Patient Gender</label>
+							<input type="text" id="form1Example23" name="time" class="form-control form-control" readonly/>
+						</div>
+						<!-- Appointment time -->
+						<div class="form-outline mb-2">
+							<label class="form-label" id="user-label" for="username">Patient DOB</label>
+							<input type="date" placeholder="Enter date" name="date" id="form1Example13" class="form-control form-control" readonly />
+						</div>
+
+						<!-- AppointMent Time input -->
+						<div class="form-outline mb-2">
+							<label class="form-label" for="password">Patient Contact no</label>
+							<input type="text" id="form1Example23" name="time" class="form-control form-control" readonly/>
+						</div>
+
+					</form>
+				   </div>
+				   <button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5" onclick="back()">back</button>
+				  </div>
+		</div>
+	<script>
+		function gayeb(){
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "block";
+		}
+		function back(){
+			document.getElementById("look").style.display = "block";
+			document.getElementById("show").style.display = "none";
+		}
+		function profile(){
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "none";
+			document.getElementById("profile").style.display = "block";
+
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		// const usrData = new Object()
+		// const url = "http://localhost:8100/dashboard/pdata";
+		// fetch(url)
+		// 	.then(res => res.json())
+		// 	.then(data => {
+		// 		usrData = data;
+		// 		getData();
+		// 	})
+			
+
+		// function getData() {
+		// 	console.log(usrData);
+		// }
+	</script>
+
+
+
+
+
+
+
+
+
+	<script>
+
+
+		$(".nav").click(function () {
+			$("#mySidenav").css('width', '100px');
+			$("#main").css('margin-left', '100px');
+			$(".logo").css('visibility', 'hidden');
+			$(".logo span").css('visibility', 'visible');
+			$(".logo span").css('margin-left', '-10px');
+			$(".icon-a").css('visibility', 'hidden');
+			$(".icons").css('visibility', 'visible');
+			$(".icons").css('margin-left', '-8px');
+			$(".nav").css('display', 'none');
+			$(".nav2").css('display', 'block');
+		});
+
+		$(".nav2").click(function () {
+			$("#mySidenav").css('width', '300px');
+			$("#main").css('margin-left', '300px');
+			$(".logo").css('visibility', 'visible');
+			$(".icon-a").css('visibility', 'visible');
+			$(".icons").css('visibility', 'visible');
+			$(".nav").css('display', 'block');
+			$(".nav2").css('display', 'none');
+		});
+
+	</script>
+
+</body>
+
+
+</html>
