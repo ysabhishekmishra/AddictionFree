@@ -18,7 +18,6 @@ router.post("/", (req, res) => {
     password: req.body.password,
   }).then((result) => {
     res.status(200);
-    console.log(result);
   });
 
   res.send("Data Submited");
