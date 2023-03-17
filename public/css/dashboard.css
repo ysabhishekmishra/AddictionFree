@@ -168,7 +168,7 @@ table {
 td, th {
   text-align: left;
   padding:15px;
-  color: #ddd;
+  color: black;
   border-bottom: 1px solid #81818140;
 }
 .circle-wrap {
@@ -233,6 +233,28 @@ heading{
   margin-left:20%;
   width:50%;
 }
+
+.appointmentdata{
+  display:none;
+  height:80vh;
+  width:70%;
+  margin-left: 20%;
+  margin-top:20px;
+}
 .mera{
   display:none;
+  margin-left: 20%;
+}
+.card-title{
+  margin-top: 15%;
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-labe{
+  font-size: 25px;
+  font-weight: 500;
+}
+.form-lal{
+  font-size: 22px;
+  font-weight: 300;
 }

@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+	font-family: system-ui;
+}
+.look{
+    width:100%;
+}
+#nam{
+    font-size: 50%;
+    float: right;
+    padding:10px;
+    height:50px;
+    width:200px;
+    margin:10px;
+    margin-left:30px;
+    
+}
+.logo{
+	margin: 0px;
+	margin-left: 28px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+}
+.logo span{
+	color: #4452d1;
+}
+.sidenav {
+  height: 6%;
+  width: 100%;
+  background-color:#84d586;
+  display: flex;
+  
+}
+.sidenav a {
+  padding: 15px 8px 15px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+.mainsection{
+    height:150vh;
+    width:100%;
+
+}
+.sidenav{
+  font-size: 36px;
+}
+#main {
+  transition: margin-left .5s;
+  /* height:100%; */
+  padding: 16px;
+}
+
+.head{
+	padding:20px;
+}
+.col-div-6{
+	width: 50%;
+	float: left;
+}
+.profile{
+	display: inline-block;
+	float: right;
+	width: 160px;
+}
+.pro-img{
+	float: left;
+	width: 40px;
+	margin-top: 5px;
+}
+.hea{
+    height: 3%;
+    font-size: 220%;
+    border:solid black;
+    border-radius: 20px;
+    margin:0 30% 2% 30%;
+    display:flex;
+    justify-content: center;
+}
+.profile p{
+	color: black;
+	font-weight: 500;
+	margin-left: 55px;
+	margin-top: 10px;
+	font-size: 13.5px;
+}
+.profile p span{
+	font-weight: 400;
+    font-size: 12px;
+    display: block;
+    color: #8e8b8b;
+}
+.col-div-3{
+	width: 33%;
+    height:40%;
+	float: left;
+    margin-top:3%;
+}
+.box{
+	width: 80%;
+	height: 150px;
+	background-color: #8193cd;
+    margin:5%;	
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.box p{
+	font-size: 35px;
+    color: black;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.box p span{
+	font-size: 20px;
+	font-weight: 400;
+	color: #000000;
+}
+.box-icon{
+	font-size: 40px!important;
+    float: right;
+    margin-top: 35px!important;
+    color: #000000;
+    padding-right: 10px;
+}
+.col-div-8{
+	width: 100%;
+    height:100%;
+	float: left;
+}
+.col-div-4{
+	width: 30%;
+	float: left;
+}
+.content-box p{
+    font-size: 20px;
+    color: #757474;
+}
+.content-box p span{
+	float: right;
+    background-color: #ddd;
+    padding: 3px 10px;
+    font-size: 15px;
+}
+
+.box-8{
+	margin-top:5%;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%; 
+}
+td, th {
+  text-align: left;
+  padding:15px;
+  border-bottom: 1px solid #81818140;
+}
+
+heading{
+  color:black;
+}
+.appointmentform{
+  display:none;
+  height:inherit;
+  margin-left:20%;
+  width:50%;
+}
+.mera{
+  display:none;
+}
+.appointmentdata{
+  display:none;
+  height:80vh;
+  width:70%;
+  margin-left: 20%;
+  margin-top:20px;
+}
+.adddoctor{
+    display:none;
+}
+.tera{
+  display:none;
+}
