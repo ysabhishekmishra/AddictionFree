@@ -1,0 +1,523 @@
+<!Doctype HTML>
+<html>
+
+<head>
+	<title>Admin-Dashboard</title>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="/css/admin.css" />
+	<link rel="icon" type="image/x-icon" href="Ass\favicon.png">
+	<script src="https://kit.fontawesome.com/bb8ca7a51b.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+	<section class="mainsection">
+		<div id="mySidenav" class="sidenav">
+			<p class="logo"><span>United</span>-Hospital</p>
+			<button class="btn" style="background-color:inherit;border:none;" type="button" class="btn btn-primary"
+				data-toggle="modal" data-target=".bd-example-modal-lg"><a href="#" class="icon-a"><i
+						class="fa fa-stethoscope icons"></i>Doctor List</a></button><br>
+			<button class="btn" style="background-color:inherit;border:none;" onclick="patient()"><a href="#"
+					class="icon-a"><i class="fa fa-user icons"></i> Patient List</a></button><br>
+			<button class="btn" style="background-color:inherit;border:none;" onclick="adddoctor()"><a href="#"
+					class="icon-a"><i class="fa-solid fa-user-doctor"></i> Add Doctor</a></button><br>
+			<button class="btn" style="background-color:inherit;border:none;" onclick="profile()"><a href="#"
+					class="icon-a"><i class="fa-solid fa-book-medical"></i> Appointment List</a></button><br>
+			<button class="btn" style="background-color:inherit;border:none;"><a href="/login" class="icon-a"><i
+						class="fa fa-sign-out icons"></i> Logout</a></button><br>
+			<!-- <img src="static\users.png" class="pro-img" /> -->
+			<p id="nam"><span id="uname"></span></p>
+
+		</div>
+		<div id="main">
+
+			<div class="look" id="look">
+
+				<div class="col-div-3">
+					<div class="box">
+						<h1 id="count"></h1><p><span>Total Number Of Patient</span></p>
+						<i class="fa fa-hospital-user box-icon"></i>
+					</div>
+				</div>
+				<div class="col-div-3">
+					<div class="box">
+						<p>Active Patients<br /><span>470</span></p>
+						<i class="fa fa-bed-pulse box-icon"></i>
+					</div>
+				</div>
+				<div class="col-div-3">
+					<div class="box" style="display: flex;flex-direction: row;">
+						<button style="background: inherit;border:none" type="button" class="btn btn-primary"
+							data-toggle="modal" data-target="#mymodalg">
+							<p>Doctor Avilable<br /><span>Doctor List</span></p>
+						</button>
+						<i class="fa fa-user icons box-icon"></i>
+					</div>
+				</div>
+				<div class="col-div-8">
+					<div class="box-8">
+						<h1 class="animate__animated animate__pulse animate__infinite hea">Increment Graph of Patient
+							Yearly</h1>
+						<div class="content-box">
+							<iframe width="100%" height="600" frameborder="0" scrolling="no"
+								src="//plotly.com/~ysabhishekmishra/1.embed"></iframe>
+						</div>
+					</div>
+				</div>
+				<!--Modal Section-->
+
+				<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+					  <div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalCenterTitle">List Of Doctors</h5>
+						</div>
+						<div class="modal-body">
+							<table class="table" id="doctor">
+								
+							</table>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+
+
+				<!-- <div class="col-div-4">
+					<div class="box-4">
+						<div class="content-box">
+							<heading>Account Statistic</heading>
+
+							<div class="circle-wrap">
+								<div class="circle">
+									<div class="mask full">
+										<div class="fill"></div>
+									</div>
+									<div class="mask half">
+										<div class="fill"></div>
+									</div>
+									<div class="inside-circle"> 75% </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+
+			</div>
+
+
+			
+			<div class="container py-2 h-100 adddoctor" id="adddoctor">
+				<div class="row d-flex align-items-center justify-content-center h-100">
+					<div class="col-md-8 col-lg-7 col-xl-6">
+						<form action="http://localhost:8100/register" method="POST">
+							<!-- Name input -->
+							<div class="form-outline mb-2">
+								<label class="form-label " for="name">Doctor Name</label>
+								<input type="text" id="name" name="name"
+									class="form-control form-control-lg" />
+							</div>
+							<!-- Age input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" for="age">Age</label>
+								<input type="age" id="age" name="age"
+									class="form-control form-control-lg" />
+							</div>
+							<!-- Gender input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" for="gender">Gender</label><br>
+								<select id="dropdown" name="gender" class="form-control">
+									<option disabled selected value>Select</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Others">Others</option>
+								</select>
+							</div>
+	
+	
+							<!-- Age input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" for="role">Select User Type</label>
+								<select id="dropdown" name="role" class="form-control">
+									<option disabled selected value>Select</option>
+									<option value="Doctor">Doctor</option>
+								</select>
+							</div>
+	
+							<!-- Email input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" id="user-label" for="email">Email<small>(Required*)</small></label>
+								<input type="Email" name="email"  id="form1Example13" class="form-control form-control" />
+							</div>
+	
+							<!-- Email input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" id="user-label" for="phone">Phone no</label>
+								<input type="number" name="phone"  id="form1Example13" class="form-control form-control" />
+							</div>
+	
+							<!-- Username input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" id="user-label" for="username">Set Username
+									<small>(Required*)</small></label>
+								<input type="text" name="username" id="form1Example13" class="form-control form-control" />
+							</div>
+	
+							<!-- Password input -->
+							<div class="form-outline mb-2">
+								<label class="form-label" for="password">Password<small>(Required*)</small></label>
+								<input type="password" id="form1Example23" name="password" class="form-control form-control" />
+							</div>
+	
+							<!-- Submit button -->
+							<button type="submit" class="btn btn-primary btn-lg btn-block my-1">Register</button>
+							
+						</form>
+					</div>
+					<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+						<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+						<lottie-player class="img-fluid" alt="Phone image"
+							src="https://assets1.lottiefiles.com/packages/lf20_zpjfsp1e.json" background="transparent"
+							speed="1" style="width: 500px; height: 600px;" loop autoplay></lottie-player>
+					</div>
+				</div>
+			</div>
+
+			<div class="appointmentform" id="show">
+				<h2><br>Book your Appointment</h2>
+				<form" method="POST">
+					<!-- Name input -->
+					<div class="form-outline mb-2">
+						<label class="form-label " for="name">Patient Name</label>
+						<input type="text" id="name" name="name" placeholder="Enter your name"
+							class="form-control form-control" />
+
+					</div>
+					<!-- Age input -->
+					<div class="form-outline mb-2">
+						<label class="form-label" for="age">Patient Age</label>
+						<input type="age" id="age" name="age" placeholder="Enter your Age"
+							class="form-control form-control" />
+					</div>
+					<!-- Gender input -->
+					<div class="form-outline mb-2">
+						<label class="form-label" for="gender">Select Gender</label><br>
+						<select id="dropdown" name="gender" class="form-control" required>
+							<option disabled selected value>Select</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Others">Others</option>
+						</select>
+					</div>
+					<!-- Email input -->
+					<div class="form-outline mb-2">
+						<label class="form-label" id="user-label" for="email">Email<small>(Required*)</small></label>
+						<input type="Email" placeholder="Email" name="email" id="form1Example13"
+							class="form-control form-control" />
+					</div>
+
+					<!-- Appointment time -->
+					<div class="form-outline mb-2">
+						<label class="form-label" id="user-label" for="username">Appointment Date</label>
+						<input type="date" placeholder="Enter date" name="date" id="form1Example13"
+							class="form-control form-control" />
+					</div>
+
+					<!-- AppointMent Time input -->
+					<div class="form-outline mb-2">
+						<label class="form-label" for="password">Appointment-Time</label>
+						<input type="time" id="form1Example23" name="time" class="form-control form-control" />
+					</div>
+					<div class="form-outline mb-2">
+						<label class="form-label" for="password">Describe your Helth Condition</label>
+						<textarea type="textarea" id="form1Example23" name="time"
+							class="form-control form-control"></textarea>
+					</div>
+
+					<!-- Submit button -->
+					<button type="submit" class="btn btn-success btn-lg btn-block my-1">Submit</button>
+					<button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5"
+						onclick="back()">back</button>
+
+					</form>
+			</div>
+
+		</div>
+
+
+
+		<div class="mera" id="profile">
+			<div class="container p-5">
+				<div class="card mb-5" style="border:none;">
+					<div class="row" style="border:none;">
+						<div class="col-md-4 p-5">
+							<img src="Ass/profile.jpg" height="300" width="300" alt="..." class="center">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title"><b>Patient Information</b></h5>
+								<table class="table" id="appointmentlist">
+
+								</table>
+							</div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5"
+								onclick="back()">back</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Patient table-->
+		<div class="tera" id="pat">
+			<div class="container p-5">
+				<div class="card mb-5" style="border:none;">
+					<div class="row" style="border:none;">
+						<div class="col-md-4 p-5">
+							<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+							<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vPnn3K.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5 class="card-title"><b>Patient Information</b></h5>
+								<table class="table" id="patient">
+
+								</table>
+							</div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5"
+								onclick="back()">back</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</section>
+
+	<script>
+		function gayeb() {
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "block";
+			document.getElementById("pat").style.display = "none";
+			document.getElementById("profile").style.display = "none";
+			document.getElementById("adddoctor").style.display = "none";
+		}
+		function back() {
+			document.getElementById("look").style.display = "block";
+			document.getElementById("show").style.display = "none";
+			document.getElementById("pat").style.display = "none";
+			document.getElementById("profile").style.display = "none";
+			document.getElementById("adddoctor").style.display = "none";
+		}
+		function profile() {
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "none";
+			document.getElementById("pat").style.display = "none";
+			document.getElementById("profile").style.display = "block";
+			document.getElementById("adddoctor").style.display = "none";
+
+		}
+		function adddoctor() {
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "none";
+			document.getElementById("pat").style.display = "none";
+			document.getElementById("profile").style.display = "none";
+			document.getElementById("adddoctor").style.display = "block";
+
+		}
+		function patient(){
+			document.getElementById("look").style.display = "none";
+			document.getElementById("show").style.display = "none";
+			document.getElementById("pat").style.display = "block";
+			document.getElementById("profile").style.display = "none";
+			document.getElementById("adddoctor").style.display = "none";
+
+		}
+
+		var usrData = new Object()
+		const url = "http://localhost:8100/dashborad/getappointment";
+		fetch(url)
+			.then(res => res.json())
+			.then(data => {
+				usrData = data;
+				show()
+			})
+		// Function to define innerHTML for HTML table
+		function show() {
+			let tab =
+				`
+				<thead class="thead-dark"><tr>
+			<th>Name</th>
+			<th>age</th>
+			<th>gender</th>
+			<th>email</th>
+			<th>date</th>
+			<th>time</th>
+			<th>description</th>
+			</tr></thead>`;
+
+			// Loop to access all rows 
+			for (let i = 0; i < usrData.getapoint.length; i++) {
+				tab += `<tr> 
+			<td>${usrData.getapoint[i].name} </td>
+			<td>${usrData.getapoint[i].age}</td>
+			<td>${usrData.getapoint[i].gender}</td>
+			<td>${usrData.getapoint[i].email}</td>
+			<td>${usrData.getapoint[i].date}</td>
+			<td>${usrData.getapoint[i].time}</td>
+			<td>${usrData.getapoint[i].description}</td>
+					
+		</tr>`;
+			}
+			// Setting innerHTML as tab variable
+			document.getElementById("appointmentlist").innerHTML = tab;
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		const urls = "http://localhost:8100/login/getsingle";
+		fetch(urls)
+			.then(res => res.json())
+			.then(data => {
+				userData = data;
+				returnkrdo()
+								
+			})
+
+			function returnkrdo(){
+				document.getElementById("uname").innerHTML = userData.name;
+			}
+	</script>
+
+
+
+
+	<script>
+		var usData = new Object()
+		const ur = "http://localhost:8100/login/patients";
+		fetch(ur)
+			.then(res => res.json())
+			.then(data => {
+				usData = data;
+				showus()
+			})
+		// Function to define innerHTML for HTML table
+		function showus() {
+			document.getElementById("count").innerHTML=usData.patients.length;
+			let tabus =
+				`
+				<thead class="thead-dark"><tr>	
+			<th>Name</th>
+			<th>Age</th>
+			<th>Gender</th>
+			<th>Gmail</th>
+			<th>Role</th>
+			<th>Username</th>
+			<th>Password</th>
+			</tr></thead>`;
+
+			// Loop to access all rows 
+			for (let i = 0; i < usData.patients.length; i++) {
+				tabus += `<tr> 	
+			<td>${usData.patients[i].name} </td>
+			<td>${usData.patients[i].age}</td>
+			<td>${usData.patients[i].gender}</td>
+			<td>${usData.patients[i].email}</td>
+			<td>${usData.patients[i].role}</td>
+			<td>${usData.patients[i].username}</td>
+			<td>${usData.patients[i].password}</td>
+					
+		</tr>`;
+			}
+			// Setting innerHTML as tab variable
+			document.getElementById("patient").innerHTML = tabus;
+		}
+	</script>
+
+
+
+
+
+
+<script>
+	var dData = new Object()
+	const ure = "http://localhost:8100/login/doctor";
+	fetch(ure)
+		.then(res => res.json())
+		.then(data => {
+			dData = data;
+			showd()
+		})
+	// Function to define innerHTML for HTML table
+	function showd() {
+		let ta =
+			`
+			<thead class="thead-dark"><tr>	
+		<th>Name</th>
+		<th>Age</th>
+		<th>Gender</th>
+		<th>Gmail</th>
+		<th>Role</th>
+		<th>Username</th>
+		<th>Password</th>
+		</tr></thead>`;
+
+		// Loop to access all rows 
+		for (let i = 0; i < dData.doctor.length; i++) {
+			ta += `<tr> 	
+		<td>${dData.doctor[i].name} </td>
+		<td>${dData.doctor[i].age}</td>
+		<td>${dData.doctor[i].gender}</td>
+		<td>${dData.doctor[i].email}</td>
+		<td>${dData.doctor[i].role}</td>
+		<td>${dData.doctor[i].username}</td>
+		<td>${dData.doctor[i].password}</td>
+				
+	</tr>`;
+		}
+		// Setting innerHTML as tab variable
+		document.getElementById("doctor").innerHTML = ta;
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></scrip>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+
+
+</body>
+
+
+</html>
