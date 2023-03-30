@@ -67,7 +67,7 @@
 		
 		<div class="clearfix"></div>
 		<br /><br />
-		<div class="col-div-8">
+		<!-- <div class="col-div-8">
 			<div class="box-8">
 				<div class="content-box">
 					<heading></heading>
@@ -76,7 +76,7 @@
 					src="//plotly.com/~ysabhishekmishra/1.embed"></iframe>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="col-div-4">
 			<div class="box-4">
@@ -153,21 +153,21 @@
 <!--Appointment Booking Code-->
 
 
-	<div class="appointmentform" id="show">
+	<div class="appointmentform" id="show" style="height: auto;">
 		<h4><br>Book your Appointment</h4>
 
 		<form action="http://localhost:8100/dashborad/appointment" method="POST" >
 			<!-- Name input -->
 			<div class="form-outline mb-2">
 				<label class="form-label " for="name">Patient Name</label>
-				<input type="text" id="name" name="name" placeholder="Enter your name"
+				<input type="text" id="name" name="name" placeholder="Enter your name" required
 					class="form-control form-control" />
 				
 			</div>
 			<!-- Age input -->
 			<div class="form-outline mb-2">
 				<label class="form-label" for="age">Patient Age</label>
-				<input type="text" id="age" name="age" placeholder="Enter your Age"
+				<input type="text" id="age" name="age" placeholder="Enter your Age" required
 					class="form-control form-control" />
 			</div>
 			<!-- Gender input -->
@@ -184,22 +184,24 @@
 			<!-- Appointment time -->
 			<div class="form-outline mb-2">
 				<label class="form-label" id="date" for="date">Appointment Date</label>
-				<input type="text" placeholder="Enter date" name="date" id="form1Example13" class="form-control form-control" />
+				<input type="text" placeholder="Enter date" name="date" required id="form1Example13" class="form-control form-control" />
 			</div>
 
 			<!-- AppointMent Time input -->
+			
 			<div class="form-outline mb-2">
 				<label class="form-label" for="time">Appointment-Time</label>
-				<input type="number" id="time" name="time" class="form-control form-control" />
+				<input type="time" id="time" required name="time" class="form-control form-control" />
 			</div>
 
 			<div class="form-outline mb-2">
-				<label class="form-label" for="description">Describe your Helth Condition</label>
-				<textarea type="text" id="description" name="description" class="form-control form-control"></textarea>
+				<label class="form-label" for="time">Payment Id <a href="https://rzp.io/l/w58WPWX" target="_blank">for payment click here</a></label>
+				<input type="text" id="time" required name="payment_id" class="form-control form-control" />
 			</div>
+		
 
 			<!-- Submit button -->
-			<button type="submit" class="btn btn-success btn-lg btn-block my-1">Submit</button>
+			<button type="submit" onclick="redirect()" class="btn btn-success btn-lg btn-block my-1"> Book now </button>
 			<button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5" onclick="back()">back</button>
 
 		</form>
@@ -245,6 +247,10 @@
 
 
 	<script>
+
+		function redirect(){
+			window.location.href = "http://localhost:8100/dashborad" ;
+		}
 		function gayeb(){
 			document.getElementById("look").style.display = "none";
 			document.getElementById("show").style.display = "block";
