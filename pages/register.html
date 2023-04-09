@@ -1,130 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>United Hospital-SignUp</title>
-    <link rel="icon" type="image/x-icon" href="Ass\favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
+    <link rel="icon" type="image/x-icon" href="Ass\favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
-        <div class="container">
-            <a class="navbar-brand" href="#">United Hospital</a>
-            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="bx bx-menu"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">Disabled</a>
-                    </li>
-                </ul>
-                <a href="login" class="btn btn-primary shadow-none ms-4">Login</a>
-            </div>
-
-
+      <div class="container">
+        <a class="navbar-brand" href="#">united Hospital</a>
+        <button
+          class="navbar-toggler shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../">Home</a>
+            </li>
+          </ul>
+          <a href="login" class="btn btn-primary shadow-none ms-4">Login</a>
         </div>
+      </div>
     </nav>
 
-
     <section class="vh-95">
-        <div class="container py-2 h-100">
-            <div class="row d-flex align-items-center justify-content-center h-100">
-                <div class="col-md-8 col-lg-7 col-xl-6">
-                    <form action="http://localhost:8100/register" method="POST">
-                        <!-- Name input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label " for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your name"
-                                class="form-control form-control-lg" />
-                        </div>
-                        <!-- Age input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="age">Age</label>
-                            <input type="age" id="age" name="age" placeholder="Enter your Age"
-                                class="form-control form-control-lg" />
-                        </div>
-                        <!-- Gender input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="gender">Gender</label><br>
-                            <select id="dropdown" name="gender" class="form-control" required>
-                                <option disabled selected value>Select</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Others">Others</option>
-                            </select>
-                        </div>
+      <div class="container py-2 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <form action="http://localhost:8100/register" method="POST">
+              <!-- Name input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="form-control form-control-lg"
+                  required
+                />
+              </div>
+              <!-- Age input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" for="age">Age</label>
+                <input
+                  type="age"
+                  id="age"
+                  name="age"
+                  placeholder="Enter your Age"
+                  class="form-control form-control-lg"
+                  required
+                />
+              </div>
+              <!-- Gender input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" for="gender">Gender</label><br />
+                <select
+                  id="dropdown"
+                  name="gender"
+                  class="form-control"
+                  required
+                >
+                  <option disabled selected value>Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
 
+              <!-- Age input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" for="role">Select User Type</label>
+                <select id="dropdown" name="role" class="form-control" required>
+                  <option disabled selected value>Select</option>
+                  <option value="Patient">Patient</option>
+                </select>
+              </div>
 
-                        <!-- Age input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="role">Select User Type</label>
-                            <select id="dropdown" name="role" class="form-control" required>
-                                <option disabled selected value>Select</option>
-                                <option value="Patient">Patient</option>
-                                
-                            </select>
-                        </div>
+              <!-- Email input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" id="user-label" for="email"
+                  >Email<small>(Required*)</small></label
+                >
+                <input
+                  type="Email"
+                  placeholder="Email"
+                  name="email"
+                  id="form1Example13"
+                  class="form-control form-control"
+                  required
+                />
+              </div>
 
-                        <!-- Email input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" id="user-label" for="email">Email<small>(Required*)</small></label>
-                            <input type="Email" placeholder="Email"name="email"  id="form1Example13" class="form-control form-control" />
-                        </div>
+              <!-- Email input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" id="user-label" for="phone"
+                  >Phone no</label
+                >
+                <input
+                  type="number"
+                  placeholder="Enter you contact no"
+                  name="phone"
+                  id="form1Example13"
+                  class="form-control form-control"
+                  required
+                />
+              </div>
 
-                        <!-- Email input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" id="user-label" for="phone">Phone no</label>
-                            <input type="number" placeholder="Enter you contact no"name="phone"  id="form1Example13" class="form-control form-control" />
-                        </div>
+              <!-- Username input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" id="user-label" for="username"
+                  >Set Username <small>(Required*)</small></label
+                >
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  id="form1Example13"
+                  class="form-control form-control"
+                  required
+                />
+              </div>
 
-                        <!-- Username input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" id="user-label" for="username">Set Username
-                                <small>(Required*)</small></label>
-                            <input type="text" placeholder="Username" name="username" id="form1Example13" class="form-control form-control" />
-                        </div>
+              <!-- Password input -->
+              <div class="form-outline mb-2">
+                <label class="form-label" for="password"
+                  >Password<small>(Required*)</small></label
+                >
+                <input
+                  type="password"
+                  id="form1Example23"
+                  name="password"
+                  class="form-control form-control"
+                  required
+                />
+              </div>
 
-                        <!-- Password input -->
-                        <div class="form-outline mb-2">
-                            <label class="form-label" for="password">Password<small>(Required*)</small></label>
-                            <input type="password" id="form1Example23" name="password" class="form-control form-control" />
-                        </div>
-
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block my-1">Sign Up</button>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block my-1 ms-5 loginbutton"><a
-                                href="login" style="text-decoration: none; color:inherit;">Sign in</a></button>
-
-                    </form>
-                </div>
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player class="img-fluid" alt="Phone image"
-                        src="https://assets4.lottiefiles.com/private_files/lf30_1TcivY.json" background="transparent"
-                        speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
-                </div>
-            </div>
+              <!-- Submit button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block my-1"
+              >
+                Sign Up
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg btn-block my-1 ms-5 loginbutton"
+              >
+                <a href="login" style="text-decoration: none; color: inherit"
+                  >Login</a
+                >
+              </button>
+            </form>
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player
+              class="img-fluid"
+              alt="Phone image"
+              src="https://assets4.lottiefiles.com/private_files/lf30_1TcivY.json"
+              background="transparent"
+              speed="1"
+              style="width: 100%; height: 100%"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
         </div>
+      </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

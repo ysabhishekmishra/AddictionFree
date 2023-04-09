@@ -13,14 +13,14 @@ router.post("/", (req, res) => {
     age: req.body.age,
     gender: req.body.gender,
     role: req.body.role,
-    email:req.body.email,
+    email: req.body.email,
     username: req.body.username,
     password: req.body.password,
   }).then((result) => {
     res.status(200);
   });
 
-  res.send("Data Submited");
+  res.sendFile(path.join(__dirname, "../pages/submit.html"));
 });
 
 module.exports = router;

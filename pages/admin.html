@@ -123,19 +123,19 @@
 							<!-- Name input -->
 							<div class="form-outline mb-2">
 								<label class="form-label " for="name">Doctor Name</label>
-								<input type="text" id="name" name="name"
+								<input required  type="text" id="name" name="name"
 									class="form-control form-control-lg" />
 							</div>
 							<!-- Age input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" for="age">Age</label>
-								<input type="age" id="age" name="age"
+								<input type="age"  required id="age" name="age"
 									class="form-control form-control-lg" />
 							</div>
 							<!-- Gender input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" for="gender">Gender</label><br>
-								<select id="dropdown" name="gender" class="form-control">
+								<select id="dropdown" name="gender" required class="form-control">
 									<option disabled selected value>Select</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
@@ -156,26 +156,26 @@
 							<!-- Email input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" id="user-label" for="email">Email<small>(Required*)</small></label>
-								<input type="Email" name="email"  id="form1Example13" class="form-control form-control" />
+								<input  required  type="Email" name="email"  id="form1Example13" class="form-control form-control" />
 							</div>
 	
 							<!-- Email input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" id="user-label" for="phone">Phone no</label>
-								<input type="number" name="phone"  id="form1Example13" class="form-control form-control" />
+								<input  required  type="number" name="phone"  id="form1Example13" class="form-control form-control" />
 							</div>
 	
 							<!-- Username input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" id="user-label" for="username">Set Username
 									<small>(Required*)</small></label>
-								<input type="text" name="username" id="form1Example13" class="form-control form-control" />
+								<input  required  type="text" name="username" id="form1Example13" class="form-control form-control" />
 							</div>
 	
 							<!-- Password input -->
 							<div class="form-outline mb-2">
 								<label class="form-label" for="password">Password<small>(Required*)</small></label>
-								<input type="password" id="form1Example23" name="password" class="form-control form-control" />
+								<input  required  type="password" id="form1Example23" name="password" class="form-control form-control" />
 							</div>
 	
 							<!-- Submit button -->
@@ -347,25 +347,29 @@
 		}
 
 		var usrData = new Object()
+		var usrarray = new Array();
 		const url = "http://localhost:8100/dashborad/getappointment";
 		fetch(url)
 			.then(res => res.json())
 			.then(data => {
+
 				usrData = data;
+				usrData.getapoint.reverse()
 				show()
 			})
 		// Function to define innerHTML for HTML table
 		function show() {
 			let tab =
 				`
-				<thead class="thead-dark"><tr>
+			<thead class="thead-dark"><tr>
 			<th>Name</th>
 			<th>age</th>
 			<th>gender</th>
 			<th>email</th>
 			<th>date</th>
 			<th>time</th>
-			<th>description</th>
+			
+			<th>payment ID</th>
 			</tr></thead>`;
 
 			// Loop to access all rows 
@@ -377,7 +381,8 @@
 			<td>${usrData.getapoint[i].email}</td>
 			<td>${usrData.getapoint[i].date}</td>
 			<td>${usrData.getapoint[i].time}</td>
-			<td>${usrData.getapoint[i].description}</td>
+			
+			<td>${usrData.getapoint[i].payment_id}</td>
 					
 		</tr>`;
 			}

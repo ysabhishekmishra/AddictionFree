@@ -1,205 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Attendance Dashboard | By Code Info</title>
-  <link rel="stylesheet" href="css/doctor.css" />
-  <!-- Font Awesome Cdn Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-</head>
-<body>
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href="#" class="logo">
-          <img src="./pic/logo.jpg">
-          <span class="nav-item">Admin</span>
-        </a></li>
-        <li><a href="#">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="css/doctor.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link href="C:\AddictionFree\FrontEnd\css\login.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">
+          <img
+            src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg?w=2000"
+          />
+          <span class="nav-item">Doctor panel</span>
+        </a>
+
+        <a href="#">
           <i class="fas fa-menorah"></i>
           <span class="nav-item">Dashboard</span>
-        </a></li>
-        <li><a href="#">
+        </a>
+
+        <a href="#">
           <i class="fas fa-comment"></i>
-          <span class="nav-item">Message</span>
-        </a></li>
-        <li><a href="#">
+          <span class="nav-item">Patients</span>
+        </a>
+
+        <a href="#">
           <i class="fas fa-database"></i>
-          <span class="nav-item">Report</span>
-        </a></li>
-        <li><a href="#">
+          <span class="nav-item">More Info</span>
+        </a>
+
+        <a href="#">
           <i class="fas fa-chart-bar"></i>
-          <span class="nav-item">Attendance</span>
-        </a></li>
-        <li><a href="#">
-          <i class="fas fa-cog"></i>
-          <span class="nav-item">Setting</span>
-        </a></li>
+          <span class="nav-item">LogOut</span>
+        </a>
+      </nav>
 
-        <li><a href="#" class="logout">
-          <i class="fas fa-sign-out-alt"></i>
-          <span class="nav-item">Log out</span>
-        </a></li>
-      </ul>
-    </nav>
+      <section class="main">
+        <div class="main-top">
+          <h1>My information</h1>
+          <i class="fas fa-user-cog"></i>
+        </div>
+        <div class="users">
+          <div class="card">
+            <!-- <img
+              src="https://as2.ftcdn.net/jpg/03/64/21/11/220_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
+            /> -->
+            <h4>Nazmeen khan</h4>
+            <p>MBBS Doctor</p>
+            <div class="per">
+              <table>
+                <tr>
+                  <td><span>Joined</span></td>
+                  <td><span>2004</span></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Year</td>
+                </tr>
+              </table>
+            </div>
+            <button>Profile</button>
+          </div>
+        </div>
 
+        <section class="attendance">
+          <div class="attendance-list">
+            <h1>Patience List</h1>
 
-    <section class="main">
-      <div class="main-top">
-        <h1>Attendance</h1>
-        <i class="fas fa-user-cog"></i>
-      </div>
-      <div class="users">
-        <div class="card">
-          <img src="./pic/img1.jpg">
-          <h4>Sam David</h4>
-          <p>Ui designer</p>
-          <div class="per">
-            <table>
-              <tr>
-                <td><span>85%</span></td>
-                <td><span>87%</span></td>
-              </tr>
-              <tr>
-                <td>Month</td>
-                <td>Year</td>
-              </tr>
-            </table>
+            <div id="table_container" style="height: 100vh; overflow-y: scroll">
+              <table id="patients_table" class="table">
+                <thead>
+                  <tr>
+                    <th>SrNo</th>
+                    <th>Patient ID</th>
+                    <th>Name</th>
+                    <th>Appoinment Date</th>
+                    <th>Appointment Time</th>
+                    <!-- <th>More Info</th> -->
+                  </tr>
+                </thead>
+                <tbody id="patient"></tbody>
+              </table>
+            </div>
           </div>
-          <button>Profile</button>
-        </div>
-        <div class="card">
-          <img src="./pic/img2.jpg">
-          <h4>Balbina kherr</h4>
-          <p>Progammer</p>
-          <div class="per">
-            <table>
-              <tr>
-                <td><span>82%</span></td>
-                <td><span>85%</span></td>
-              </tr>
-              <tr>
-                <td>Month</td>
-                <td>Year</td>
-              </tr>
-            </table>
-          </div>
-          <button>Profile</button>
-        </div>
-        <div class="card">
-          <img src="./pic/img3.jpg">
-          <h4>Badan John</h4>
-          <p>tester</p>
-          <div class="per">
-            <table>
-              <tr>
-                <td><span>94%</span></td>
-                <td><span>92%</span></td>
-              </tr>
-              <tr>
-                <td>Month</td>
-                <td>Year</td>
-              </tr>
-            </table>
-          </div>
-          <button>Profile</button>
-        </div>
-        <div class="card">
-          <img src="./pic/img4.jpg">
-          <h4>Salina micheal</h4>
-          <p>Ui designer</p>
-          <div class="per">
-            <table>
-              <tr>
-                <td><span>85%</span></td>
-                <td><span>82%</span></td>
-              </tr>
-              <tr>
-                <td>Month</td>
-                <td>Year</td>
-              </tr>
-            </table>
-          </div>
-          <button>Profile</button>
-        </div>
-      </div>
-
-      <section class="attendance">
-        <div class="attendance-list">
-          <h1>Attendance List</h1>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Depart</th>
-                <th>Date</th>
-                <th>Join Time</th>
-                <th>Logout Time</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>01</td>
-                <td>Sam David</td>
-                <td>Design</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                <td>3:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr class="active">
-                <td>02</td>
-                <td>Balbina Kherr</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr>
-                <td>03</td>
-                <td>Badan John</td>
-                <td>testing</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                <td>3:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr>
-                <td>04</td>
-                <td>Sara David</td>
-                <td>Design</td>
-                <td>03-24-22</td>
-                <td>8:00AM</td>
-                <td>3:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <!-- <tr >
-                <td>05</td>
-                <td>Salina</td>
-                <td>Coding</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr>
-              <tr >
-                <td>06</td>
-                <td>Tara Smith</td>
-                <td>Testing</td>
-                <td>03-24-22</td>
-                <td>9:00AM</td>
-                <td>4:00PM</td>
-                <td><button>View</button></td>
-              </tr> -->
-            </tbody>
-          </table>
-        </div>
+        </section>
       </section>
-    </section>
-  </div>
+    </div>
+  </body>
 
-</body>
+  <script>
+    var usData = new Object();
+    const ur = "http://localhost:8100/dashborad/getappointment";
+    fetch(ur)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        usData = data;
+        usData.getapoint.reverse();
+        showus();
+      });
+    // Function to define innerHTML for HTML table
+    var tabus = "";
+    function showus() {
+      // Loop to access all rows
+      for (let i = 0; i < usData.getapoint.length; i++) {
+        tabus += `<tr> 	
+
+			<td>${i + 1} </td>
+			<td>${usData.getapoint[i]._id} </td>
+			<td>${usData.getapoint[i].name}</td>
+			<td>${usData.getapoint[i].date}</td>
+			<td>${usData.getapoint[i].time}</td>
+			
+					
+		</tr>`;
+      }
+      // Setting innerHTML as tab variable
+      document.getElementById("patient").innerHTML = tabus;
+    }
+  </script>
 </html>
